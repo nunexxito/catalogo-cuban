@@ -1,0 +1,91 @@
+.catalogo {
+    color: $blanco;
+    text-align: center;
+
+    h2 {
+        margin: 0;
+        margin-top: 4rem
+    }
+
+    .catalogo-grid {
+        @include grid(2, $separacion /2);
+        padding: 4rem;
+        padding-bottom: 0;
+
+        h3 {
+            margin: 0;
+        }
+
+        h4 {
+            margin: 0;
+            font-family: $fuente2;
+        }
+
+        @include tablet {
+            @include grid(3, $separacion /2);
+        }
+    }
+}
+
+
+.producto {
+    position: relative;
+    margin: auto;
+    width: 10rem;
+    height: 15rem;
+
+    .productoNombre {
+        font-size: 1.8rem;
+    }
+    .productoPrecio {
+        font-size: 1.5rem;
+    }
+
+    .contenido-img {
+        height: 10rem;
+        .img {
+            height: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    @include telefono{
+        width: 15rem;
+        height: 22.5rem;
+
+        .productoNombre {
+            font-size: 2rem;
+        }
+        .productoPrecio {
+            font-size: 1.75rem;
+        }
+
+        .contenido-img {
+            height: 15rem;
+            .img {
+                height: 15rem;
+            }
+        }
+    }
+
+    @include tablet {
+        width: 20rem;
+        height: 30rem;
+
+        .productoNombre {
+            font-size: 2.4rem;
+        }
+        .productoPrecio {
+            font-size: 1.8rem;
+        }
+
+        .contenido-img {
+            height: 20rem;
+            .img {
+                height: 20rem;
+            }
+        }
+    }
+}

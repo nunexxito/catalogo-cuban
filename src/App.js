@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+// import ProductItem from "./components/ProductItem.js"
+import "./styled/app.scss";
+import Pagina from "./components/Pagina.js"
+import { catalogo } from "./data/DataCatalogo.js"
 
 function App() {
+  const [ctlg, setCtlg] = useState(catalogo);
+
+  useEffect(()=> {
+    setCtlg(catalogo);
+  }, [])
+
+  // console.log(ctlg)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Pagina data={data}/> */}
+      <Pagina ctlg={ctlg} />
     </div>
   );
 }

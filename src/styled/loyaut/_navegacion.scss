@@ -1,0 +1,141 @@
+.header {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+
+    .video {
+        width: 100%;
+        height: 45vh;
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+    .text-container {
+        padding-top: 9rem;
+        width: 100%;
+        height: 45vh;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        background: #000;
+        mix-blend-mode: darken;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    h3 {
+          position: absolute;
+          font-size: 6rem;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          color: #fff;
+          font-family: $fuente3;
+          font-weight: 900;
+          margin: 0;
+    }
+
+    @include telefono {
+        h3 {
+            font-size: 7.5rem;
+        }
+    }
+
+    @include tablet {
+
+        .video {
+            height: 35vh;
+            margin-top: 8rem;
+          }
+
+        .text-container {
+              width: 100%;
+        }
+
+        h3 {
+            font-size: 9rem;
+        }
+    }
+}
+
+.navegacion {
+    position: fixed;
+    background-color: $negro;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    z-index: 99;
+    width: 100vw;
+
+    .logo {
+        background: none;
+        border: none;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 3rem;
+    }
+
+    nav{
+        margin: auto 0;
+    }
+
+    .btn-nav {
+        opacity: 0;
+        display: none;
+    }
+
+    .menu {
+        padding: .5rem;
+        background-color: $negro;
+        border: none;
+        opacity: 1;
+        visibility: visible;
+        display: inline-block;
+    }
+
+    .quitar{
+        opacity: 0;
+    }
+
+    @include telefono {
+        padding: 2rem;
+
+        .btn-nav {
+            padding: 1rem;
+            background-color: $negro;
+            border: none;
+            color: $blanco;
+            font-family: $fuente2;
+            opacity: 1;
+            visibility: visible;
+            display: inline-block;
+            font-size: 1.2rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $blanco;
+                color: $negro;
+                border-radius: .5rem;
+            }
+        }
+
+        .menu {
+            opacity: 0;
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+     @include tablet {
+        padding: 2rem 5rem;
+    }
+}

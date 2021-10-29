@@ -1,0 +1,89 @@
+
+.contenido-modal-barras {
+	background-color: rgba(255, 255, 255, 0.95);
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	padding: 2rem;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease;
+	z-index: 99;
+}
+
+.contenedor-carrusel-modal {
+	background-color: rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-barras {
+	display: flex;
+	flex-direction: column;
+
+	.exit {
+		background: none;
+		border: none;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.contenido-modal{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-top: 5rem;
+
+		.btn-modal {
+			color: $negro;
+			margin: 2rem;
+			font-size: 2.7rem;
+			padding: 1rem;
+			background: none;
+			border: none;
+			font-family: $fuente2;
+			opacity: 1;
+			visibility: visible;
+			display: inline-block;
+
+			@include tablet {
+				opacity: 0;
+				visibility: hidden;
+				display: none;
+			}
+		}
+	}
+}
+
+.carrusel-modal {
+	width: 30rem;
+	height: 30rem;
+	margin: auto;
+
+	img {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.show {
+	pointer-events: auto;
+	opacity: 1;
+	display: block;
+}
