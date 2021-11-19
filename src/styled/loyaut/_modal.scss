@@ -1,8 +1,6 @@
-
+// modal barras
 .contenido-modal-barras {
 	background-color: rgba(255, 255, 255, 0.95);
-	display: flex;
-	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -13,22 +11,6 @@
 	pointer-events: none;
 	transition: opacity .3s ease;
 	z-index: 99;
-}
-
-.contenedor-carrusel-modal {
-	background-color: rgba(0, 0, 0, 0.3);
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity .3s ease;
-	z-index: 99;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .modal-barras {
@@ -70,20 +52,149 @@
 	}
 }
 
+//modal carrusel
+.contenedor-carrusel-modal {
+	// background-color: rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .carrusel-modal {
 	width: 30rem;
 	height: 30rem;
 	margin: auto;
+	z-index: 2;
 
-	img {
-		display:flex;
-		justify-content: center;
-		align-items: center;
+	@include telefono {
+		width: 40rem;
+		height: 40rem;
+	}
+
+	@include tablet{
+		width: 50rem;
+		height: 50rem;
 	}
 }
 
+.nov-modal{
+	width: 25rem;
+	height: 37.5rem;
+	margin: auto;
+	z-index: 2;
+
+	.img{
+		height: 37.5rem;
+	}
+
+	@include telefono {
+		width: 35rem;
+		height: 52.5rem;
+
+		.img{
+			height: 52.5rem;
+		}
+	}
+
+	@include tablet{
+		width: 45rem;
+		height: 67.5rem;
+
+		.img{
+			height: 67.5rem;
+		}
+	}
+}
+
+.nov-modal-dos{
+	width: 30rem;
+	height: 30rem;
+	margin: auto;
+	z-index: 2;
+
+	.img{
+		height: 30rem;
+	}
+
+	@include telefono {
+		width: 40rem;
+		height: 40rem;
+
+		.img{
+			height: 40rem;
+		}
+	}
+
+	@include tablet{
+		width: 50rem;
+		height: 50rem;
+
+		.img{
+			height: 50rem;
+		}
+	}
+}
+
+//modal contacto
+.contenido-modal-contacto {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	padding: 2rem;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease;
+	z-index: 999;
+}
+
+.modal-contacto {
+	background-color: rgba(10, 10, 10);
+	width: 90%;
+	max-width: 45rem;
+	height: 45rem;
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+
+	button {
+		background: none;
+		border: none;
+		padding: 1rem;
+		display: flex;
+		justify-content: flex-end;
+
+		path {
+			fill: $blanco;
+		}
+	}
+}
+
+.toggle{
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+//show
 .show {
 	pointer-events: auto;
 	opacity: 1;
-	display: block;
 }

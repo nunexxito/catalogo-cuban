@@ -10,14 +10,14 @@ export default function ProductItem({ data }) {
 
     return (
         <div className="producto" >
-            <div onClick={cambiarMostrar3}>
+            <div >
                 <div className="contenido-img">
                     {/* <img className="img" src={foto} alt="producto" /> */}
                     <Carrusel className="img" foto1={foto1} foto2={foto2} foto3={foto3}/>
                 </div>
                 <div className="text">
-                    <h3 className="productoNombre">{name}</h3>
-                    <h4 className="productoPrecio">${price}.000</h4>
+                    <h3 className="productoNombre" onClick={cambiarMostrar3}>{name}</h3>
+                    <h4 className="productoPrecio" onClick={cambiarMostrar3}>${price}.000</h4>
                 </div>
             </div>
             <CarruselModal mostrar3={mostrar3} cambiarMostrar3={cambiarMostrar3} foto1={foto1} foto2={foto2} foto3={foto3}/>

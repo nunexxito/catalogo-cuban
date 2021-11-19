@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Izquierda } from '../img/left.svg';
 import { ReactComponent as Derecha } from '../img/right.svg';
-import { RViewer } from 'react-viewerjs';
+// import { RViewer } from 'react-viewerjs';
 
 
 export default function Carrusel({foto1, foto2, foto3}) {
@@ -82,17 +82,17 @@ export default function Carrusel({foto1, foto2, foto3}) {
 		});
 	}, [])
 
-	const imagenes = [
-		{foto1}, {foto2}, {foto3}
-	];
+	// const imagenes = [
+	// 	{foto1}, {foto2}, {foto3}
+	// ];
 
-	const mostrarImagen = ()=> {
-		return(
-			<div>
-				<RViewer imagenURL={imagenes}/>
-			</div>
-		);
-	}
+	// const mostrarImagen = ()=> {
+	// 	return(
+	// 		<div>
+	// 			<RViewer imagenURL={imagenes}/>
+	// 		</div>
+	// 	);
+	// }
 
 	return(
 		<ContenedorPrincipal>
@@ -107,7 +107,7 @@ export default function Carrusel({foto1, foto2, foto3}) {
 					<img src={foto3} alt="Producto" />
 				</Slide>
 			</SlideShow>
-			<Controles className="controles" onClick={mostrarImagen}>
+			<Controles className="controles">
 					<Boton onClick={anterior}>
 						<Izquierda className="izquierdo"/>
 					</Boton>
@@ -166,7 +166,7 @@ const Controles = styled.div`
 
 const Boton = styled.div`
 	pointer-events: all;
-	cursor: pointer;
+	/* cursor: pointer; */
 	background: none;
 	border: none;
 	height: 100%;
@@ -176,6 +176,10 @@ const Boton = styled.div`
 	transition: .3s ease all;
 	display: flex;
 	align-items: center;
+
+	&:hover {
+		opacity: 1;
+	}
 
 	path {
 		filter: ${props => props.derecho ? 'drop-shadow(-2px 0px 0px #fff)' : 'drop-shadow(2px 0px 0px #fff)'};

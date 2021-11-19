@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import ModalBarras from "./ModalBarras";
 import { Link } from 'react-scroll';
-import ModalNosotros from './ModalNosotros'
+import ModalContacto from './ModalContacto'
 
 export default function Navegacion() {
     const [mostrar, setMostrar] = useState(false);
@@ -12,15 +12,15 @@ export default function Navegacion() {
 
     return (
         <div className="navegacion">
-        <Link to="inicio">
-                <h2>CUBAN</h2>
+        <Link to="inicio" smooth={true} duration={1000}>
+                <h2 className="title">CUBAN</h2>
         </Link>
             <nav>
-                <Link to="novedades" className="btn-nav">Novedades</Link>
-                <Link to="catalogo" className="btn-nav">Catalogo</Link>
+                <Link to="novedades" smooth={true} duration={1000} className="btn-nav">Novedades</Link>
+                <Link to="catalogo" smooth={true} duration={1000} className="btn-nav">Catalogo</Link>
                 {/* <Link className="btn-nav">Ultimas unidades</Link> */}
                 <Link className="btn-nav" onClick={cambiarMostrar2}>Contacto</Link>
-                <ModalNosotros mostrar2={mostrar2} cambiarMostrar2={cambiarMostrar2}/>
+                <ModalContacto mostrar2={mostrar2} cambiarMostrar2={cambiarMostrar2}/>
                 <button onClick={cambiarMostrar} className={`menu ${mostrar && "quitar"}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                         width="30" height="30"

@@ -5,7 +5,7 @@ export default function BtnRedes() {
 	<div className="btn-redes">
 		<input type="checkbox" id="btn-mas" />
 		<div className="redes">
-			<a href="instagram.com">
+			<a href="https://www.instagram.com/cuban.co/" target="_blank" rel="noreferrer">
 				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 					width="30" height="30"
 					viewBox="0 0 24 24" className="insta"> <path d="M 8 3 C 5.243 3
@@ -20,7 +20,7 @@ export default function BtnRedes() {
 					9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15
 					C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path></svg>
 			</a>
-			<a href="instagram.com">
+			<a href="https://api.whatsapp.com/message/YRPRED3U3G3BE1" target="_blank" rel="noreferrer">
 				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 					width="30" height="30"
 					viewBox="0 0 24 24" className="wapp"> <path d="M 12.011719 2 C 6.5057187

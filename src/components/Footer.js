@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-scroll';
-import ModalNosotros from './ModalNosotros';
+import ModalContacto from './ModalContacto';
 
 export default function Footer(){
 	const [mostrar2, setMostrar2] = useState(false);
@@ -8,17 +8,19 @@ export default function Footer(){
 
 	return(
 		<div className="contenido-footer">
-			<h1>Cuban</h1>
+			<Link to="inicio" smooth={true} duration={1000}>
+				<h1 className="title">CUBAN</h1>
+			</Link>
 			<div className="navegacion-footer">
 				<nav>
-					<Link to="novedades" className="btn-footer">Novedades</Link>
-					<Link to="catalogo" className="btn-footer">Catalogo</Link>
-					<Link className="btn-footer">Contacto</Link>
-					<ModalNosotros mostrar2={mostrar2} cambiarMostrar2={cambiarMostrar2}/>
+					<Link to="novedades" smooth={true} duration={1000} className="btn-footer">Novedades</Link>
+					<Link to="catalogo" smooth={true} duration={1000} className="btn-footer">Catalogo</Link>
+					<Link className="btn-footer" onClick={cambiarMostrar2}>Contacto</Link>
+					<ModalContacto mostrar2={mostrar2} cambiarMostrar2={cambiarMostrar2}/>
 				</nav>
 			</div>
 			<div className="redes-footer">
-				<a href="instagram.com">
+				<a href="https://www.instagram.com/cuban.co/" target="_blank" rel="noreferrer">
 					<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="30" height="30"
 						viewBox="0 0 24 24" className="insta"> <path d="M 8 3 C 5.243 3
@@ -33,7 +35,7 @@ export default function Footer(){
 						9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15
 						C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path></svg>
 				</a>
-				<a href="instagram.com">
+				<a href="https://api.whatsapp.com/message/YRPRED3U3G3BE1" target="_blank" rel="noreferrer">
 					<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="30" height="30"
 						viewBox="0 0 24 24" className="wapp"> <path d="M 12.011719 2 C 6.5057187
