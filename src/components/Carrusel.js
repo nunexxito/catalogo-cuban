@@ -145,7 +145,7 @@ const Slide = styled.div`
 	min-width: 100%;
 	overflow: hidden;
 	transition: .3s ease all;
-	z-index: 10;
+	z-index: 4;
 
 	img {
 		width: 100%;
@@ -156,7 +156,7 @@ const Slide = styled.div`
 const Controles = styled.div`
 	position: absolute;
 	top: 0;
-	z-index: 20;
+	z-index: 5;
 	width: 100%;
 	height: 100%;
 	pointer-events: none;

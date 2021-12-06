@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import ModalNov1 from './ModalNov1'
+import Modal from './Modal'
 
 export default function NovItemOne({ data }) {
     let { foto, name, price } = data
-    const [mostrar, setMostrar] = useState(false);
-
-    const cambiarMostrar = () => setMostrar(prev => !prev);
+    const [estado1, setEstado1] = useState(false);
+    const cambiarEstado1 = () => setEstado1(prev => !prev);
 
     return (
         <div>
-            <div className="producto1" onClick={cambiarMostrar}>
+            <div className="producto1" onClick={cambiarEstado1}>
                 <div className="contenido-img">
                     <img className="img" src={foto} alt="producto" />
                 </div>
@@ -18,7 +17,19 @@ export default function NovItemOne({ data }) {
                     <h4 className="productoPrecio">${price}.000</h4>
                 </div>
             </div>
-            <ModalNov1 foto={foto} mostrar={mostrar} cambiarMostrar={cambiarMostrar} />
+            <Modal
+                estado={estado1}
+                cambiarEstado={cambiarEstado1}
+                mostrarHeader={false}
+                mostrarToggle={true}
+                posicionVertical={false}
+                exit={'#000'}
+                borderRadius={'0'}
+                padding={'0'}>
+                <div className="nov-modal">
+                    <img className='img' src={foto} alt="producto" />
+                </div>
+            </Modal>
         </div>
     );
 }

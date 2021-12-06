@@ -24,11 +24,6 @@ export default function Novedades() {
 		setNov4(novedades4);
 	}, []);
 
-	// console.log(nov1);
-	// console.log(nov2);
-	// console.log(nov3);
-	// console.log(nov4);
-
     return (
         <div>
             <div className="novedades contenedor">

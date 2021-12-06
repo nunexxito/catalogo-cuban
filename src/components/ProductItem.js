@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import Carrusel from "./Carrusel.js"
-import CarruselModal from './CarruselModal'
+import Modal from './Modal'
 
 export default function ProductItem({ data }) {
     let { foto1, foto2, foto3, name, price } = data
-
-    const [mostrar3, setMostrar3] = useState(false);
-    const cambiarMostrar3 = () => setMostrar3(prev => !prev);
+    const [estado1, setEstado1] = useState(false);
+    const cambiarEstado1 = () => setEstado1(prev => !prev);
 
     return (
         <div className="producto" >
@@ -16,11 +15,21 @@ export default function ProductItem({ data }) {
                     <Carrusel className="img" foto1={foto1} foto2={foto2} foto3={foto3}/>
                 </div>
                 <div className="text">
-                    <h3 className="productoNombre" onClick={cambiarMostrar3}>{name}</h3>
-                    <h4 className="productoPrecio" onClick={cambiarMostrar3}>${price}.000</h4>
+                    <h3 className="productoNombre" onClick={cambiarEstado1}>{name}</h3>
+                    <h4 className="productoPrecio" onClick={cambiarEstado1}>${price}.000</h4>
                 </div>
             </div>
-            <CarruselModal mostrar3={mostrar3} cambiarMostrar3={cambiarMostrar3} foto1={foto1} foto2={foto2} foto3={foto3}/>
+            <Modal
+                estado={estado1}
+                cambiarEstado={cambiarEstado1}
+                mostrarHeader={false}
+                mostrarToggle={true}
+                posicionVertical={false}
+                exit={'#000'}
+                borderRadius={'0'}
+                padding={'0'}>
+                    <Carrusel className="img" foto1={foto1} foto2={foto2} foto3={foto3}/>
+            </Modal>
         </div>
     );
 }
